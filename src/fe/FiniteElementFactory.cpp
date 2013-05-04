@@ -15,7 +15,7 @@ FiniteElementFactory::FiniteElementFactory() {
 /**
  * public functions
  */
-AbstractFiniteElement* FiniteElementFactory::createFinititeElement(
+AbstractFiniteElement* FiniteElementFactory::createFiniteElement(
     FiniteType type,
     const float len, 
     const int pointFrom,

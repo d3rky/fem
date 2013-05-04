@@ -15,30 +15,30 @@ class BarDiscret {
         /**
          * @constructor
          *
-         * @param width {const int} длина стержня
-         * @param elemNum {const int} количество конечныъ элементов
-         * @param type {fe::FiniteType} тип конечного элемента
+         * @param width длина стержня
+         * @param elemNum количество конечныъ элементов
+         * @param type тип конечного элемента
          */
-        BarDiscret(const int width, const int elemNum, fe::FiniteType type);
+        BarDiscret(const float width, const int elemNum, fe::FiniteType type);
 
         /**
          * Добавить граничное условие
          *
-         * @param {utils::BoundaryPlace} граничное условие с привязкой к месту
+         * @param граничное условие с привязкой к месту
          */
         void addCondition(utils::BoundaryPlace bound);
 
         /**
          * Рассчитать матрицу конечных элементов
          *
-         * @return {utils::Matrix*} матрица
+         * @return матрица
          */
         utils::Matrix* getMatrix();
 
         /**
          * Возвратить количество элементов, на которые разбиваем
          *
-         * @return {int}
+         * @return
          */
         int getElemNum() const;
 
@@ -57,7 +57,7 @@ class BarDiscret {
         /**
          * Массив конечных элементов
          */
-        std::vector<fe::AbstractFiniteElement*> finiteElements;
+        std::vector<fe::AbstractFiniteElement*> _finiteElements;
 };
 
 #endif

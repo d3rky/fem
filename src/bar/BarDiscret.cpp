@@ -1,4 +1,5 @@
 #include "../../include/BarDiscret.h"
+#include "../../include/FiniteElementFactory.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 /**
@@ -6,11 +7,23 @@
  */
 
 BarDiscret::BarDiscret(
-    const int width, 
+    const float width, 
     const int elemNum,
     fe::FiniteType type
 ) : _elemNum(elemNum) {
-    ;
+    float elemLen = width/elemNum;
+    fe::FiniteElementFactory* elemFactory = new fe::FiniteElementFactory();
+
+    for(int i=0; i<elemNum; i++) {
+        _finiteElements.push_back(
+            elemFactory->createFiniteElement(
+                type,
+                elemLen,
+                i,
+                i+1
+            )
+        );
+    }
 };
 
 ////////////////////////////////////////////////////////////////////////////////

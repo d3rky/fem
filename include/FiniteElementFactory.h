@@ -36,7 +36,7 @@ class FiniteElementFactory {
          *
          * @return конечный элемент
          */
-        AbstractFiniteElement* createFinititeElement(
+        AbstractFiniteElement* createFiniteElement(
             FiniteType type,
             const float len, 
             const int pointFrom,
