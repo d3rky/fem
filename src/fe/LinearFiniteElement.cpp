@@ -48,5 +48,19 @@ std::vector<utils::MatrixElement> LinearFiniteElement::getMatrixElement(Function
     );
     matrix.push_back(elem);
 
+    elem = utils::MatrixElement(
+        -1,
+        _pointNumFrom,
+        - func->d*_len/2.0
+    );
+    matrix.push_back(elem);
+
+    elem = utils::MatrixElement(
+        -1,
+        _pointNumTo,
+        - func->d*_len/2.0
+    );
+    matrix.push_back(elem);
+
     return matrix;  
 };

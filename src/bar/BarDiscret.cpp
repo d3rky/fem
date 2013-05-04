@@ -40,7 +40,7 @@ void BarDiscret::addCondition(utils::BoundaryPlace bound) {
 };
 
 utils::Matrix* BarDiscret::getMatrix() {
-    utils::Matrix* matrix = new utils::Matrix(_elemNum+1, _elemNum+1);
+    utils::Matrix* matrix = new utils::Matrix(_elemNum+3, _elemNum+3);
 
     return matrix;
 };
