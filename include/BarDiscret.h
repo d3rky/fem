@@ -7,6 +7,7 @@
 #include "Utils.h"
 #include "AbstractFiniteElement.h"
 #include "FiniteElementFactory.h"
+#include "Function.h"
 
 class BarDiscret {
     
@@ -31,9 +32,11 @@ class BarDiscret {
         /**
          * Рассчитать матрицу конечных элементов
          *
+         * @param func коэффициенты уравнения, для которых надо рассчитать
+         *
          * @return матрица
          */
-        utils::Matrix* getMatrix();
+        utils::Matrix* getMatrix(Function* func);
 
         /**
          * Возвратить количество элементов, на которые разбиваем

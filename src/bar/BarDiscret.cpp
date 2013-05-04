@@ -39,8 +39,18 @@ void BarDiscret::addCondition(utils::BoundaryPlace bound) {
     _boundaryConditions.push_back(bound);
 };
 
-utils::Matrix* BarDiscret::getMatrix() {
+utils::Matrix* BarDiscret::getMatrix(Function* func) {
     utils::Matrix* matrix = new utils::Matrix(_elemNum+3, _elemNum+3);
+
+    std::vector<utils::MatrixElement> finiteElem;
+
+    std::vector<fe::AbstractFiniteElement*>::iterator iter = _finiteElements.begin();
+
+    for(; iter != _finiteElements.end(); iter++) {
+        finiteElem = (*iter)->getMatrixElement(func);
+
+        matrix->add(finiteElem);
+    }
 
     return matrix;
 };

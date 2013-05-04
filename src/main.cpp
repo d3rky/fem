@@ -9,7 +9,7 @@
 int main(int argc, char** argv) {
     
     const float width = 7.0;
-    const int elemNum = 20;
+    const int elemNum = 3;
 
     utils::BoundaryPlace leftCond = utils::BoundaryPlace(
         0,
@@ -25,6 +25,10 @@ int main(int argc, char** argv) {
     BarDiscret* linearBar = new BarDiscret(width, elemNum, fe::LINEAR);
     linearBar->addCondition(leftCond);
     linearBar->addCondition(rightCond);
+
+    utils::Matrix* matr = linearBar->getMatrix(u);
+
+    matr->print();
 
     return 0;  
 };
