@@ -62,6 +62,13 @@ class Matrix {
         void add(std::vector<MatrixElement>);
 
         /**
+         * Очистить строчку
+         *
+         * @param rowNum номер строки(нумерация с 0)
+         */
+        void clearRow(const int rowNum);
+
+        /**
          * @return {float**}
          */
         float** getMatrix() const;

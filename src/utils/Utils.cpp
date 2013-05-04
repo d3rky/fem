@@ -57,6 +57,12 @@ void Matrix::add(std::vector<MatrixElement> vec_elem) {
     }
 };
 
+void Matrix::clearRow(const int rowNum) {
+    for(int j=0; j<_width; j++) {
+        _matrix[rowNum][j] = 0.0;
+    }
+};
+
 float** Matrix::getMatrix() const {
     return _matrix;
 };

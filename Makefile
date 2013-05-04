@@ -34,3 +34,4 @@ object_dir:
 
 clean:
 	rm -rf $(SOURCE_DIR)/**/*.o
+	rm -rf $(SOURCE_DIR)/*.o
