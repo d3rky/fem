@@ -25,6 +25,7 @@ debug: mke
 mke: object_dir $(OBJECTS)
 	$(CC) $(OBJECTS) -o $(BUILD_DIR)/mke
 	rm -rf $(SOURCE_DIR)/**/*.o
+	rm -rf $(SOURCE_DIR)/*.o
 
 object_dir:
 	mkdir -p build
