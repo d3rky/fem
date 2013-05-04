@@ -25,9 +25,11 @@ class LinearFiniteElement: public AbstractFiniteElement {
         /**
          * Возвращаем часть матрицы для данного конечного элемента
          *
+         * @param func коэффициенты функций, для которых применяется это уравнение
+         *
          * @return часть матрицы
          */
-        virtual std::vector<utils::MatrixElement> getMatrixElement();
+        virtual std::vector<utils::MatrixElement> getMatrixElement(Function* func);
 
 };
 

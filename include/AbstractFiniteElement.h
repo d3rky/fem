@@ -6,6 +6,7 @@
 
 #include "Utils.h"
 #include "AbstractBoundaryCondition.h"
+#include "Function.h"
 
 class BarDiscret;
 
@@ -50,7 +51,7 @@ class AbstractFiniteElement {
             const int pointNumTo
         );
 
-        virtual std::vector<utils::MatrixElement> getMatrixElement()=0;
+        virtual std::vector<utils::MatrixElement> getMatrixElement(Function* func)=0;
 };
 
 }; //fe namespace
