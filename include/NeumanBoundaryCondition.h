@@ -5,7 +5,7 @@
 #include "AbstractBoundaryCondition.h"
 
 /**
- * @class граничные условия 1-ого рода
+ * @class граничные условия 2-ого рода
  */
 class NeumanBoundaryCondition : public AbstractBoundaryCondition {
     

@@ -5,7 +5,7 @@
 #include "AbstractBoundaryCondition.h"
 
 /**
- * @class граничные условия 1-ого рода
+ * @class граничные условия 3-ого рода
  */
 class BalanceBoundaryCondition : public AbstractBoundaryCondition {
     
