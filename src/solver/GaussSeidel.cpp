@@ -48,7 +48,12 @@ float* GaussSeidel::solve(utils::Matrix* matrix) {
                 }
             }
             prev_result[i] = result[i];
-            result[i] = (b[i] - var) / mat[i][i];
+
+            if(mat[i][i] == 0.0) {
+                result[i] = 0.0;
+            } else {
+                result[i] = (b[i] - var) / mat[i][i];
+            }
         }
     } while(!converge(result, prev_result, matrix->getHeight()));
 
