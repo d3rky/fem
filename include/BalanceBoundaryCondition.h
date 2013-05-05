@@ -1,4 +1,4 @@
-#ifndef NEUMANBOUNDARYCONDITION_H
+#ifndef BALANCEBOUNDARYCONDITION_H
 
 #define NEUMANBOUNDARYCONDITION_H
 
@@ -7,10 +7,10 @@
 /**
  * @class граничные условия 1-ого рода
  */
-class NeumanBoundaryCondition : public AbstractBoundaryCondition {
+class BalanceBoundaryCondition : public AbstractBoundaryCondition {
     
     public:
-        NeumanBoundaryCondition(const float value);
+        NeumanBoundaryCondition();
 
         virtual std::vector<utils::MatrixElement> getMatrix(
             const int pointNum,
