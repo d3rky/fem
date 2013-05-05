@@ -12,15 +12,23 @@
 class AbstractBoundaryCondition {
     
     public:
-        AbstractBoundaryCondition(const float value) : _value(value) {};
+        AbstractBoundaryCondition(const float value, const bool mustClear) 
+        : _value(value), _mustClear(mustClear) {};
 
         float getValue() const { return _value; };
 
-        virtual std::vector<utils::MatrixElement> getMatrix(const int pointNum)=0;
+        bool clearRow() const {return _mustClear; };
+
+        virtual std::vector<utils::MatrixElement> getMatrix(
+            const int pointNum,
+            const int numOfPoints=0
+        )=0;
 
     protected:
 
         const float _value;
+
+        const bool _mustClear;
 };
 
 #endif

@@ -6,7 +6,7 @@
  * constructors
  */
 DerichleBoundaryCondition::DerichleBoundaryCondition(const float value)
-: AbstractBoundaryCondition(value) {
+: AbstractBoundaryCondition(value, true) {
     ;  
 };
 
@@ -14,7 +14,10 @@ DerichleBoundaryCondition::DerichleBoundaryCondition(const float value)
 /**
  * public functions
  */
-std::vector<utils::MatrixElement> DerichleBoundaryCondition::getMatrix(const int pointNum) {
+std::vector<utils::MatrixElement> DerichleBoundaryCondition::getMatrix(
+    const int pointNum,
+    const int numOfPoints
+) {
     std::vector<utils::MatrixElement> matrix;
     utils::MatrixElement elem = utils::MatrixElement(pointNum, pointNum, 1.0);
 

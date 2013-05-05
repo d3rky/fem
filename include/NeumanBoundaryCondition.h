@@ -1,20 +1,20 @@
-#ifndef DERICHLEBONDARYCONDITION_H
+#ifndef NEUMANBONDARYCONDITION_H
 
-#define DERICHLEBOUNDARYCONDITION_H
+#define NEUMANBOUNDARYCONDITION_H
 
 #include "AbstractBoundaryCondition.h"
 
 /**
  * @class граничные условия 1-ого рода
  */
-class DerichleBoundaryCondition : public AbstractBoundaryCondition {
+class NeumanBoundaryCondition : public AbstractBoundaryCondition {
     
     public:
-        DerichleBoundaryCondition(const float value);
+        NeumanBoundaryCondition(const float value);
 
         virtual std::vector<utils::MatrixElement> getMatrix(
             const int pointNum,
-            const int numOfPoints
+            const int numOfPoints=0
         );
 
 };

@@ -57,9 +57,21 @@ utils::Matrix* BarDiscret::getMatrix(Function* func) {
     std::vector<utils::BoundaryPlace>::iterator condIter = _boundaryConditions.begin();
 
     for(; condIter != _boundaryConditions.end(); condIter++) {
-        std::vector<utils::MatrixElement> condMatr = (*condIter).cond->getMatrix((*condIter).pointNum);
+        std::vector<utils::MatrixElement> condMatr = (*condIter).cond->getMatrix((*condIter).pointNum, _elemNum+1);
 
-        matrix->clearRow((*condIter).pointNum);
+        if((*condIter).cond->clearRow()) {
+            matrix->clearRow((*condIter).pointNum);
+        }
+
+        std::vector<utils::MatrixElement>::iterator matrIter = condMatr.begin();
+
+        for(; matrIter != condMatr.end(); matrIter++) {
+            std::cout<<"==================================="<<std::endl;
+            std::cout<<" - i "<<(*matrIter).i<<std::endl;
+            std::cout<<" - j "<<(*matrIter).j<<std::endl;
+            std::cout<<" - value "<<(*matrIter).value<<std::endl;
+            std::cout<<"==================================="<<std::endl<<std::endl;
+        }
 
         matrix->add(condMatr);
     }

@@ -12,6 +12,7 @@ BAR_CPP = $(SOURCE_DIR)/bar/BarDiscret.cpp
 SOLVER_CPP = $(SOURCE_DIR)/solver/GaussSeidel.cpp
 UTILS_CPP = $(SOURCE_DIR)/utils/Utils.cpp
 CONDITION_CPP = $(SOURCE_DIR)/boundary_condition/DerichleBoundaryCondition.cpp
+CONDITION_CPP += $(SOURCE_DIR)/boundary_condition/NeumanBoundaryCondition.cpp
 MAIN_CPP = $(SOURCE_DIR)/main.cpp
 
 SOURCES=$(CONDITION_CPP) $(BAR_CPP) $(SOLVER_CPP) $(UTILS_CPP) $(FINITE_CPP) $(MAIN_CPP)
