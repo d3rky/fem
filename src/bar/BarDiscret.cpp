@@ -76,7 +76,7 @@ utils::Matrix* BarDiscret::getMatrix(Function* func) {
     std::vector<utils::BoundaryPlace>::iterator condIter = _boundaryConditions.begin();
 
     for(; condIter != _boundaryConditions.end(); condIter++) {
-        std::vector<utils::MatrixElement> condMatr = (*condIter).cond->getMatrix((*condIter).pointNum, _elemNum+1);
+        std::vector<utils::MatrixElement> condMatr = (*condIter).cond->getMatrix((*condIter).pointNum, _elemNum*_elemDim, func);
 
         if((*condIter).cond->clearRow()) {
             matrix->clearRow((*condIter).pointNum);

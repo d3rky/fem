@@ -20,6 +20,28 @@ std::vector<utils::MatrixElement> NeumanBoundaryCondition::getMatrix(
     Function* func
 ) {
     std::vector<utils::MatrixElement> matrix;
+    int duPointNum = (pointNum == numOfPoints ? numOfPoints+2 : numOfPoints+1);
+
+    utils::MatrixElement elem = utils::MatrixElement(
+        pointNum,
+        duPointNum,
+        1
+    );
+    matrix.push_back(elem);
+
+    elem = utils::MatrixElement(
+        duPointNum,
+        duPointNum,
+        1
+    );
+    matrix.push_back(elem);
+
+    elem = utils::MatrixElement(
+        -1,
+        duPointNum,
+        getValue()/func->a
+    );
+    matrix.push_back(elem);
 
     return matrix;
 };
