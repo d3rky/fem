@@ -58,18 +58,6 @@ utils::Matrix* BarDiscret::getMatrix(Function* func) {
     for(; iter != _finiteElements.end(); iter++) {
         finiteElem = (*iter)->getMatrixElement(func);
 
-        std::vector<utils::MatrixElement>::iterator matIter = finiteElem.begin();
-
-        std::cout<<"============================================================"<<std::endl<<std::endl;
-        for(; matIter != finiteElem.end(); matIter++) {
-            std::cout<<"////////////////////////////////////////////////////////"<<std::endl;
-            std::cout<<" - i "<<(*matIter).i<<std::endl;
-            std::cout<<" - j "<<(*matIter).j<<std::endl;
-            std::cout<<" - value "<<(*matIter).value<<std::endl;
-            std::cout<<"////////////////////////////////////////////////////////"<<std::endl;
-        }
-        std::cout<<"============================================================"<<std::endl<<std::endl;
-
         matrix->add(finiteElem);
     }
 
@@ -81,8 +69,6 @@ utils::Matrix* BarDiscret::getMatrix(Function* func) {
         if((*condIter).cond->clearRow()) {
             matrix->clearRow((*condIter).pointNum);
         }
-
-        std::vector<utils::MatrixElement>::iterator matrIter = condMatr.begin();
 
         matrix->add(condMatr);
     }
