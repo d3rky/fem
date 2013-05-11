@@ -45,6 +45,13 @@ class BarDiscret {
          */
         int getElemNum() const;
 
+        /**
+         * Возвратить длину конечного элемента
+         *
+         * @return
+         */
+        float getElemLen() const;
+
     protected:
 
         /**
@@ -56,6 +63,10 @@ class BarDiscret {
          * Количество конечных элементов
          */
         const int _elemNum;
+
+        int _elemDim;
+
+        float _elemLen;
 
         /**
          * Массив конечных элементов

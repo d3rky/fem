@@ -10,11 +10,12 @@
 class BalanceBoundaryCondition : public AbstractBoundaryCondition {
     
     public:
-        NeumanBoundaryCondition();
+        BalanceBoundaryCondition();
 
         virtual std::vector<utils::MatrixElement> getMatrix(
             const int pointNum,
-            const int numOfPoints=0
+            const int numOfPoints=0,
+            Function* func=0
         );
 
 };

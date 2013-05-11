@@ -6,13 +6,14 @@ BUILD_DIR=build
 
 # define .cpp for modules
 FINITE_CPP = $(SOURCE_DIR)/fe/AbstractFiniteElement.cpp $(SOURCE_DIR)/fe/LinearFiniteElement.cpp
-FINITE_CPP += $(SOURCE_DIR)/fe/FiniteElementFactory.cpp
+FINITE_CPP += $(SOURCE_DIR)/fe/FiniteElementFactory.cpp $(SOURCE_DIR)/fe/CubicFiniteElement.cpp
 
 BAR_CPP = $(SOURCE_DIR)/bar/BarDiscret.cpp
 SOLVER_CPP = $(SOURCE_DIR)/solver/GaussSeidel.cpp
 UTILS_CPP = $(SOURCE_DIR)/utils/Utils.cpp
 CONDITION_CPP = $(SOURCE_DIR)/boundary_condition/DerichleBoundaryCondition.cpp
 CONDITION_CPP += $(SOURCE_DIR)/boundary_condition/NeumanBoundaryCondition.cpp
+CONDITION_CPP += $(SOURCE_DIR)/boundary_condition/BalanceBoundaryCondition.cpp
 MAIN_CPP = $(SOURCE_DIR)/main.cpp
 
 SOURCES=$(CONDITION_CPP) $(BAR_CPP) $(SOLVER_CPP) $(UTILS_CPP) $(FINITE_CPP) $(MAIN_CPP)

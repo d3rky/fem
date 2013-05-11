@@ -82,6 +82,8 @@ int Matrix::getHeight() const {
 };
 
 void Matrix::print() {
+    std::cout.precision(5);
+
     for(int i=_height-1; i>=0; i--) {
         for(int j=0; j<_width; j++) {
             std::cout<<_matrix[i][j]<<"\t";

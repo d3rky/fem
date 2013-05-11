@@ -23,42 +23,42 @@ std::vector<utils::MatrixElement> LinearFiniteElement::getMatrixElement(Function
     utils::MatrixElement elem = utils::MatrixElement(
         _pointNumFrom, 
         _pointNumFrom,
-        - func->a/_len - func->b/2.0 + func->c*_len/3.0
+        func->a/_len - func->b/-2.0 - func->c*_len/3.0
     );
     matrix.push_back(elem);
 
     elem = utils::MatrixElement(
         _pointNumFrom,
         _pointNumTo,
-        func->a/_len + func->b/2.0 + func->c*_len/6.0
+        func->a/-_len - func->b/2.0 - func->c*_len/6.0
     );
     matrix.push_back(elem);
 
     elem = utils::MatrixElement(
         _pointNumTo,
         _pointNumFrom,
-        func->a/_len - func->b/2.0 + func->c*_len/6.0
+        func->a/-_len - func->b/-2.0 - func->c*_len/6.0
     );
     matrix.push_back(elem);
 
     elem = utils::MatrixElement(
         _pointNumTo,
         _pointNumTo,
-        - func->a/_len + func->b/2.0 + func->c*_len/6.0
+        func->a/_len - func->b/2.0 - func->c*_len/3.0
     );
     matrix.push_back(elem);
 
     elem = utils::MatrixElement(
         -1,
         _pointNumFrom,
-        - func->d*_len/2.0
+        func->d*_len/2.0
     );
     matrix.push_back(elem);
 
     elem = utils::MatrixElement(
         -1,
         _pointNumTo,
-        - func->d*_len/2.0
+        func->d*_len/2.0
     );
     matrix.push_back(elem);
 

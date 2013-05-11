@@ -16,7 +16,8 @@ DerichleBoundaryCondition::DerichleBoundaryCondition(const float value)
  */
 std::vector<utils::MatrixElement> DerichleBoundaryCondition::getMatrix(
     const int pointNum,
-    const int numOfPoints
+    const int numOfPoints,
+    Function* func
 ) {
     std::vector<utils::MatrixElement> matrix;
     utils::MatrixElement elem = utils::MatrixElement(pointNum, pointNum, 1.0);

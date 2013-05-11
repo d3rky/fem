@@ -1,5 +1,6 @@
 #include "../../include/FiniteElementFactory.h"
 #include "../../include/LinearFiniteElement.h"
+#include "../../include/CubicFiniteElement.h"
 
 using namespace fe;
 
@@ -26,7 +27,7 @@ AbstractFiniteElement* FiniteElementFactory::createFiniteElement(
             return (new LinearFiniteElement(len, pointFrom, pointTo));
             break;
         case CUBIC:
-            return (new LinearFiniteElement(len, pointFrom, pointTo));
+            return (new CubicFiniteElement(len, pointFrom, pointTo));
             break;
         default:
             throw "Non valid finite element type.";

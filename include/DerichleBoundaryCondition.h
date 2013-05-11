@@ -14,7 +14,8 @@ class DerichleBoundaryCondition : public AbstractBoundaryCondition {
 
         virtual std::vector<utils::MatrixElement> getMatrix(
             const int pointNum,
-            const int numOfPoints
+            const int numOfPoints=0,
+            Function* func=0
         );
 
 };

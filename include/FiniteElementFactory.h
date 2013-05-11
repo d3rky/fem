@@ -10,8 +10,8 @@ namespace fe {
  * @enum тип конечного элемента
  */ 
 enum FiniteType {
-    LINEAR,
-    CUBIC
+    LINEAR=1,
+    CUBIC=3
 };
 
 /**

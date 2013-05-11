@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "Utils.h"
+#include "Function.h"
 
 /**
  * @class Абстрактный класс для граничных условий
@@ -21,7 +22,8 @@ class AbstractBoundaryCondition {
 
         virtual std::vector<utils::MatrixElement> getMatrix(
             const int pointNum,
-            const int numOfPoints=0
+            const int numOfPoints=0,
+            Function* func=0
         )=0;
 
     protected:
