@@ -1,8 +1,11 @@
 #include <iostream>
 
 #include "../include/Function.h"
+
 #include "../include/DerichleBoundaryCondition.h"
 #include "../include/NeumanBoundaryCondition.h"
+#include "../include/BalanceBoundaryCondition.h"
+
 #include "../include/FiniteElementFactory.h"
 #include "../include/BarDiscret.h"
 #include "../include/Utils.h"
@@ -11,9 +14,9 @@
 int main(int argc, char** argv) {
     
     const float width = 7.0;
-    const int elemNum = 3;
+    const int elemNum = 7;
     const float eps = 1E-6;
-    fe::FiniteType finiteType = fe::CUBIC;
+    fe::FiniteType finiteType = fe::LINEAR;
 
     Solver* solver = new GaussSeidel(eps);
 
