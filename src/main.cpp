@@ -15,17 +15,21 @@
 
 void solve(const float width, const int elemNum, const float eps, fe::FiniteType finiteType) {
     char* fileName;
+    char* matrFileName;
 
     switch(finiteType) {
         case fe::LINEAR:
             fileName = "build/linear.output";
+            matrFileName = "build/linear_matr.output";
             break;
         case fe::CUBIC:
             fileName = "build/cubic.output";
+            matrFileName = "build/cubic_matr.output";
             break;
     };
 
     std::ofstream output(fileName, std::ios::trunc | std::ios::out);
+    std::ofstream output_matr(matrFileName, std::ios::trunc | std::ios::out);
 
     Solver* solver = new GaussSeidel(eps);
 
@@ -46,7 +50,8 @@ void solve(const float width, const int elemNum, const float eps, fe::FiniteType
 
     utils::Matrix* matr = linearBar->getMatrix(u);
 
-    //matr->print();
+    matr->print();
+    matr->print(output_matr);
 
     float* result = solver->solve(matr);
 
@@ -59,12 +64,15 @@ void solve(const float width, const int elemNum, const float eps, fe::FiniteType
         x+=linearBar->getElemLen();
     }
     std::cout<<"========================================================"<<std::endl;
+
+    output.close();
+    output_matr.close();
 };
 
 int main(int argc, char** argv) {
     
     const float width = 7.0;
-    const int elemNum = 7;
+    const int elemNum = 100;
     const float eps = 1E-6;
 
     //solve linear finite elements

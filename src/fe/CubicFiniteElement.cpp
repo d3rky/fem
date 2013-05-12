@@ -33,7 +33,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumFrom*dim,
         _pointNumFrom*dim+1,
-        func->a*(-4.72)/_len - func->b*0.712 - func->c*0.0589*_len
+        func->a*(-4.725)/_len - func->b*0.7125 - func->c*0.0589*_len
     );
     matrix.push_back(elem);
 
@@ -57,7 +57,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumFrom*dim+1,
         _pointNumFrom*dim,
-        func->a*(-4.72)/_len - func->b*(-0.712) - func->c*0.589*_len
+        func->a*(-4.725)/_len - func->b*(-0.7125) - func->c*0.0589*_len
     );
     matrix.push_back(elem);
 
@@ -73,7 +73,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumFrom*dim+1,
         _pointNumFrom*dim+2,
-        func->a*(-7.42)/_len - func->b*1.01 - func->c*(-0.0482)*_len
+        func->a*(-7.425)/_len - func->b*1.012 - func->c*(-0.0482)*_len
     );
     matrix.push_back(elem);
 
@@ -97,7 +97,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumFrom*dim+2,
         _pointNumFrom*dim+1,
-        func->a*(-7.42)/_len - func->b*(-1.01) - func->c*(-0.0482)*_len
+        func->a*(-7.425)/_len - func->b*(-1.012) - func->c*(-0.0482)*_len
     );
     matrix.push_back(elem);
 
@@ -113,7 +113,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumFrom*dim+2,
         _pointNumTo*dim,
-        func->a*(-4.72)/_len - func->b*0.712 - func->c*0.0589*_len
+        func->a*(-4.725)/_len - func->b*0.7125 - func->c*0.0589*_len
     );
     matrix.push_back(elem);
 
@@ -137,7 +137,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumTo*dim,
         _pointNumFrom*dim+2,
-        func->a*(-4.72)/_len - func->b*(-0.712) - func->c*(0.0589)*_len
+        func->a*(-4.725)/_len - func->b*(-0.7125) - func->c*(0.0589)*_len
     );
     matrix.push_back(elem);
 
@@ -145,7 +145,7 @@ std::vector<utils::MatrixElement> CubicFiniteElement::getMatrixElement(Function*
     elem = utils::MatrixElement(
         _pointNumTo*dim,
         _pointNumTo*dim,
-        func->a*3.7/_len - func->b*(0.5) - func->c*0.0762*_len
+        func->a*3.7/_len - func->b*0.5 - func->c*0.0762*_len
     );
     matrix.push_back(elem);
 
