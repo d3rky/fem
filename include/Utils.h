@@ -3,6 +3,7 @@
 #define UTILS_H
 
 #include <vector>
+#include <iostream>
 
 class AbstractBoundaryCondition;
 
@@ -88,7 +89,7 @@ class Matrix {
 
         /**
          */
-        void print();
+        void print(std::ostream& stream=std::cout);
 
     private:
         /**

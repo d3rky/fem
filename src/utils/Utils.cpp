@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 #include "../../include/Utils.h"
 
@@ -81,16 +82,16 @@ int Matrix::getHeight() const {
     return _height;
 };
 
-void Matrix::print() {
-    std::cout.precision(5);
+void Matrix::print(std::ostream& stream) {
+    stream<<std::fixed<<std::setprecision(3);
 
-    for(int i=_height-1; i>=0; i--) {
+    for(int i=0; i<_height; i++) {
         for(int j=0; j<_width; j++) {
-            std::cout<<_matrix[i][j]<<"\t";
+            stream<<_matrix[i][j]<<"\t";
         }
 
-        std::cout<<_b[i]<<std::endl;
+        stream<<_b[i]<<std::endl;
     }
 
-    std::cout<<std::endl;
+    stream<<std::endl;
 };
