@@ -39,7 +39,7 @@ std::vector<utils::MatrixElement> NeumanBoundaryCondition::getMatrix(
     elem = utils::MatrixElement(
         -1,
         duPointNum,
-        getValue()/func->a
+        getValue()*func->a
     );
     matrix.push_back(elem);
 
